@@ -36,7 +36,7 @@ bool Adafruit_MCP3008::begin(uint8_t spiModule, uint8_t cs) {
     bcm2835_spi_setDataMode(BCM2835_SPI_MODE0);
     bcm2835_spi_setClockDivider(BCM2835_SPI_CLOCK_DIVIDER_4096);
     bcm2835_spi_chipSelect(this->cs);
-    bcm2835_spi_setChipSelectPolarity(BCM2835_SPI_CS0, LOW);
+    bcm2835_spi_setChipSelectPolarity(this->cs, LOW);
   }
   else
   {
