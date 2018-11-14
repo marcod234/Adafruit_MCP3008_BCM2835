@@ -71,6 +71,7 @@ int Adafruit_MCP3008::readADCDifference(uint8_t differential) {
 int Adafruit_MCP3008::SPIxADC(uint8_t channel, bool differential) {
   char command, sgldiff;
 
+  bcm2835_spi_chipSelect(this->cs);
   if (differential) {
     sgldiff = 0;
   } else {
